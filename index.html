@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoDex - Lock</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/index.js"> </script>
+</head>
+<body class="antialiased">
+    <div id="space-container"></div>
+    <nav class="p-6 flex justify-between items-center relative z-10 backdrop-blur-sm bg-black/20">
+        <div class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            CosmoDex
+        </div>
+        <ul class="hidden md:flex space-x-6 text-sm uppercase tracking-wide">
+            <li><a href="#inicio" class="hover:text-blue-400 transition-colors">Inicio</a></li>
+            <li><a href="#caracteristicas" class="hover:text-blue-400 transition-colors">Explora</a></li>
+            <li><a href="#descargar" class="hover:text-blue-400 transition-colors">Descargar</a></li>
+        </ul>
+    </nav>
+    <!--Klk blo, te habla mistel bi-->
+    <!-- Sección Hero Principal -->
+    <header id="inicio" class="min-h-[80vh] flex flex-col items-center justify-center text-center px-4 relative z-10">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-lg">
+            Conquista el <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Sistema Solar</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed">
+            Embárcate en un viaje épico a través del cosmos. Explora planetas desconocidos, recolecta recursos, sobrevive a climas extremos y descubre los secretos que ocultan nuestros mundos vecinos.
+        </p>
+        
+        <button onclick="descargarJuego()" class="btn-glow bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg md:text-xl py-4 px-10 rounded-full flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Descargar Juego Gratis
+        </button>
+        <p class="mt-4 text-sm text-gray-400">Versión 1.0 para Windows (Simulación)</p>
+    </header>
+
+    <!-- Sección de Características / Planetas -->
+    <section id="caracteristicas" class="py-20 px-4 relative z-10 bg-black/40 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Destinos de Exploración</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Planeta 1: Mercurio -->
+                <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800 text-center hover:border-gray-500/50 transition-colors">
+                    <svg viewBox="0 0 100 100" class="planet-sphere" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="shadow-merc" cx="30%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="white" stop-opacity="0.1"/>
+                                <stop offset="100%" stop-color="black" stop-opacity="0.85"/>
+                            </radialGradient>
+                        </defs>
+                        <!-- Base -->
+                        <circle cx="50" cy="50" r="50" fill="#78716c" />
+                        <!-- Cráteres -->
+                        <circle cx="30" cy="40" r="12" fill="#57534e" opacity="0.8"/>
+                        <circle cx="28" cy="38" r="10" fill="#44403c" opacity="0.6"/>
+                        <circle cx="75" cy="65" r="16" fill="#44403c" opacity="0.6"/>
+                        <circle cx="73" cy="63" r="13" fill="#292524" opacity="0.5"/>
+                        <circle cx="45" cy="80" r="8" fill="#57534e" opacity="0.7"/>
+                        <circle cx="80" cy="25" r="7" fill="#44403c" opacity="0.5"/>
+                        <circle cx="20" cy="70" r="5" fill="#57534e" opacity="0.6"/>
+                        <circle cx="60" cy="20" r="10" fill="#57534e" opacity="0.5"/>
+                        <!-- Sombra esférica -->
+                        <circle cx="50" cy="50" r="50" fill="url(#shadow-merc)" />
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-300">Mercurio</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Soporta temperaturas extremas en el planeta más cercano al sol. Un mundo rocoso, árido y lleno de cráteres esperando ser explorado.
+                    </p>
+                </div>
+
+                <!-- Planeta 2: Venus -->
+                <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800 text-center hover:border-yellow-500/50 transition-colors" style="animation-delay: 1s;">
+                    <svg viewBox="0 0 100 100" class="planet-sphere" style="animation-delay: -2s;" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="shadow-ven" cx="30%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="black" stop-opacity="0.8"/>
+                            </radialGradient>
+                            <filter id="blur">
+                                <feGaussianBlur stdDeviation="2" />
+                            </filter>
+                        </defs>
+                        <!-- Base -->
+                        <circle cx="50" cy="50" r="50" fill="#d97706" />
+                        <!-- Nubes / Atmósfera -->
+                        <path d="M -10 20 Q 50 40 110 10" stroke="#fbbf24" stroke-width="12" fill="none" opacity="0.8" filter="url(#blur)"/>
+                        <path d="M -10 50 Q 50 30 110 60" stroke="#fcd34d" stroke-width="15" fill="none" opacity="0.6" filter="url(#blur)"/>
+                        <path d="M -10 80 Q 50 90 110 70" stroke="#f59e0b" stroke-width="18" fill="none" opacity="0.7" filter="url(#blur)"/>
+                        <path d="M -10 35 Q 50 65 110 35" stroke="#b45309" stroke-width="8" fill="none" opacity="0.5" filter="url(#blur)"/>
+                        <!-- Sombra esférica -->
+                        <circle cx="50" cy="50" r="50" fill="url(#shadow-ven)" />
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-500">Venus</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Sobrevive a la aplastante presión y las nubes tóxicas bajo la densa atmósfera de este infierno volcánico.
+                    </p>
+                </div>
+
+                <!--Tierra-->
+                <div class="bg-gray-900/60 p-8 rounded-2xl border border-gray-800 text-center hover:border-blue-500/50 transition-colors" style="animation-delay: 2s;">
+                    <svg viewBox="0 0 100 100" class="planet-sphere" style="animation-delay: -4s;" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="shadow-earth" cx="30%" cy="30%" r="70%">
+                                <stop offset="0%" stop-color="white" stop-opacity="0.2"/>
+                                <stop offset="100%" stop-color="black" stop-opacity="0.9"/>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="50" fill="#2563eb" />
+
+                        <!--Esta es la tierra-->
+                        <path d="M 20 15 Q 40 5 55 25 T 35 65 Q 15 55 10 35 Z" fill="#16a34a" />
+                        <path d="M 30 15 Q 45 15 50 30 T 40 50 Q 25 45 25 30 Z" fill="#65a30d" opacity="0.6"/> <!-- Variación terreno -->
+                        <path d="M 65 40 Q 85 30 95 55 T 75 85 Q 50 75 60 45 Z" fill="#16a34a" />
+                        <path d="M 70 45 Q 85 45 90 60 T 75 75 Q 60 65 65 50 Z" fill="#b45309" opacity="0.4"/> <!-- Desierto -->
+                        <!-- Polos -->
+                        <path d="M 30 0 Q 50 15 70 0 Z" fill="white" opacity="0.9"/>
+                        <path d="M 25 100 Q 50 85 75 100 Z" fill="white" opacity="0.9"/>
+                        <!-- Nubes -->
+                        <path d="M 5 45 Q 25 35 45 50" stroke="white" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+                        <path d="M 50 75 Q 70 65 95 80" stroke="white" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+                        <path d="M 70 20 Q 85 15 95 25" stroke="white" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"/>
+                        <!-- Sombra esférica -->
+                        <circle cx="50" cy="50" r="50" fill="url(#shadow-earth)" />
+                    </svg>
+                    <h3 class="text-2xl font-bold mb-3 text-blue-400">Tierra</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        El punto de partida de la humanidad. Recolecta recursos esenciales, administra tu base y prepárate para los viajes espaciales.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="descargar" class="py-10 text-center relative z-10 border-t border-gray-800 bg-black/60">
+        <h2 class="text-2xl font-bold mb-6">¿Estás listo para el despegue?</h2>
+        <button onclick="descargarJuego()" class="mb-8 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-black transition-all font-bold py-3 px-8 rounded-full">
+            Descargar Ahora
+        </button>
+        <p class="text-gray-600 text-sm">
+            © 2026 CosmoDex. Todos los derechos reservados.<br>
+            Lock.
+        </p>
+    </footer>
+    <div id="toast">🚀 ¡Iniciando descarga!</div>
+
+</body>
+</html>

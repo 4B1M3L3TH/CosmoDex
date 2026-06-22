@@ -1,0 +1,94 @@
+body {
+    background-color: #050510;
+    color: white;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#space-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(circle at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+        box-shadow: 0 0 5px white;
+    }
+}
+
+.planet-sphere {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.btn-glow {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.8);
+    transform: scale(1.05);
+}
+
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #38bdf8;
+    color: #000;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 50;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
