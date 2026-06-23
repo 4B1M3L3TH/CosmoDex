@@ -24,7 +24,7 @@ window.onload = crearEstrellas;
 
 function descargarJuego() {
     mostrarToast();
-    const urlDelJuego = "https://drive.google.com/file/d/1jn3EtRqsPa8EjlLa9Kb54a4WRN9lAej9/view?usp=sharing";
+    const urlDelJuego = "https://github.com/4B1M3L3TH/CosmoDex/releases/download/Juego/CosmoDex.apk";
 
     setTimeout(() => {
         const a = document.createElement('a');
