@@ -20,21 +20,11 @@ body {
     position: absolute;
     background-color: white;
     border-radius: 50%;
-    animation: twinkle infinite alternate;
+    /* Animación eliminada para mejorar rendimiento en dispositivos móviles */
+    opacity: 0.9;
 }
 
-@keyframes twinkle {
-    0% {
-        opacity: 0.2;
-        transform: scale(0.8);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1.2);
-        box-shadow: 0 0 5px white;
-    }
-}
+/* Se eliminó la animación @keyframes twinkle para evitar repintados frecuentes en móviles */
 
 .planet-sphere {
     width: 120px;
